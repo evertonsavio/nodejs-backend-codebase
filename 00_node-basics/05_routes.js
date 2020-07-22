@@ -1,9 +1,9 @@
-const http = require ('http');
 const fs = require ('fs');
 
-const server = http.createServer ((req, res) => {
+const requestHandler = (req, res) => {
   const url = req.url;
   const method = req.method;
+
   if (url === '/') {
     res.write ('<html>');
     res.write ('<html><title>Enter Message</title></html>');
@@ -24,7 +24,7 @@ const server = http.createServer ((req, res) => {
       const parsedBody = Buffer.concat (body).toString ();
       console.log (parsedBody);
       const message = parsedBody.split ('=')[1];
-      fs.writeFile ('04_message.txt', message, err => {
+      fs.writeFile ('05_message.txt', message, err => {
         //3 argument is a callback, that is a function that is executed when is done.
         res.statusCode = 302;
         res.setHeader ('Location', '/');
@@ -38,14 +38,8 @@ const server = http.createServer ((req, res) => {
   res.write ('<body><h1>Hello from Node.js Server</h1></body>');
   res.write ('</html>');
   res.end ();
-});
+};
 
-server.listen (3000);
-
-/* function requestListener(req, res){
-    ......}
-http.createServer(requestListener);
-
-http.createServer(function(req, res){
-    ......
-}); */
+module.exports = requestHandler;
+/* module.exports = {handler: requestHandler,
+                  someText: "Text"}; */
