@@ -8,6 +8,7 @@
 
 ```
 npm install --save express
+npm install --save body-parser
 ```
 
 ```
@@ -54,4 +55,11 @@ server.listen(3000);
 #por simplesmente:
 
 app.listen(3000);
+```
+
+### Body Parser
+
+```
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded());
 ```
