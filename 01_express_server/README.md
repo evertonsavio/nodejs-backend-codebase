@@ -1,8 +1,10 @@
 ### Framework Express JS
 
-- Alternatives for Express: Vanilla Node.js as in 00_node-basics
-- Frameworks -> Adonis.js like Laravel for PHP
-- Koa, Sails.js etc
+- http://expressjs.com/en/5x/api.html#app.use
+
+* Alternatives for Express: Vanilla Node.js as in 00_node-basics
+* Frameworks -> Adonis.js like Laravel for PHP
+* Koa, Sails.js etc
 
 ```
 npm install --save express
