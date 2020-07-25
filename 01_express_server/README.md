@@ -33,3 +33,23 @@ app.use((req, res, next) => {
   console.log('In Another middlewe');
 });
 ```
+
+### To send Requests
+
+```
+app.use((req, res, next) => {
+  console.log('Another middlewe');
+  res.send('<h1>Hello from Express</h1>');
+});
+```
+
+### Subsituir
+
+```
+const server = http.createServer(app);
+server.listen(3000);
+
+#por simplesmente:
+
+app.listen(3000);
+```
